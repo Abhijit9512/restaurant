@@ -1,73 +1,214 @@
-# React + TypeScript + Vite
+Restaurant Management Web App 🍽️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Restaurant Management Web Application that allows customers to view the menu, place orders, and reserve tables while enabling restaurant staff to manage orders through an admin dashboard and kitchen display.
 
-Currently, two official plugins are available:
+This project is designed as a Minimum Viable Product (MVP) and can be expanded into a multi-restaurant SaaS platform.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live Demo
 
-## React Compiler
+Deployed using Render
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Example URL:
 
-## Expanding the ESLint configuration
+https://your-app-name.onrender.com
+Features
+Customer Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+View restaurant menu
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Add items to cart
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Place food orders
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Table reservation system
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Mobile responsive interface
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Admin Features
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Admin dashboard
+
+Manage menu items
+
+View and manage orders
+
+Table management
+
+Reservation management
+
+Automatic receipt generation
+
+Kitchen Panel
+
+Real-time order display
+
+Order status updates
+
+Cooking workflow management
+
+Order statuses:
+
+Pending
+Cooking
+Ready
+Completed
+Tech Stack
+
+Frontend
+
+React
+
+Tailwind CSS
+
+React Router
+
+Backend / Database
+
+Supabase
+
+PostgreSQL
+
+Deployment
+
+Render
+
+Version Control
+
+GitHub
+
+Project Structure
+restaurant-app
+│
+├── src
+│   ├── components
+│   │
+│   ├── pages
+│   │   ├── Home.jsx
+│   │   ├── Menu.jsx
+│   │   ├── Cart.jsx
+│   │   ├── Checkout.jsx
+│   │   ├── Reservation.jsx
+│   │   ├── AdminDashboard.jsx
+│   │   ├── KitchenPanel.jsx
+│   │
+│   ├── services
+│   │   └── supabaseClient.js
+│   │
+│   └── App.jsx
+│
+├── public
+└── package.json
+Database Schema
+Menu Items
+id
+name
+description
+price
+category
+image_url
+created_at
+Orders
+id
+customer_name
+phone
+table_number
+items
+total_price
+status
+created_at
+Reservations
+id
+name
+phone
+date
+time
+people
+created_at
+Tables
+id
+table_number
+seats
+status
+Environment Variables
+
+Create a .env file in the root directory.
+
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_public_key
+
+You can find these keys in:
+
+Supabase Dashboard → Settings → API
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/your-username/restaurant-app.git
+
+Navigate to project folder:
+
+cd restaurant-app
+
+Install dependencies:
+
+npm install
+
+Run development server:
+
+npm run dev
+
+The application will run on:
+
+http://localhost:5173
+Deployment
+
+This project is deployed using Render.
+
+Steps:
+
+Push project to GitHub
+
+Connect repository to Render
+
+Configure build settings
+
+Build command:
+
+npm install && npm run build
+
+Publish directory:
+
+dist
+
+Add environment variables in Render dashboard.
+
+Future Improvements
+
+Planned upgrades for the platform:
+
+QR code table ordering
+
+WhatsApp order notifications
+
+Online payment integration
+
+Multi-restaurant SaaS system
+
+Analytics dashboard
+
+Inventory management
+
+Customer loyalty system
+
+License
+
+This project is licensed under the MIT License.
+
+Author
+
+Developed by
+
+Abhijit Jadhav
+
+Aspiring Web Developer building modern SaaS applications.
